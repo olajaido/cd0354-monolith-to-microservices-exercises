@@ -5,8 +5,8 @@ services:
   - docker
 script:
   - docker --version
-  - docker build -t simple-node
-  - docker tag simple-node olajaido/simple-node:latest
+  - docker build -t simple-node .
+  - docker tag simple-node olajaido/simple-node:latest 
   - echo "$DOCKER_PASSWORD" | docker login -u "DOCKER_USERNAME" --password-stdin
   - docker push olajaido/simple-node
 ~
